@@ -7,7 +7,7 @@
             Name = name;
             Description = description;
             Price = price;
-            PathImg = pathImg;
+            PathImg = pathImg;                    
         }
 
         public Product() { }
@@ -25,5 +25,7 @@
         {
             return $"Id: {Id}, Name: {Name}, Price: {Price} \n Image path: {PathImg} \n Desc: {Description}";
         }
+
+        
     }
 }
