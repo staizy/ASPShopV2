@@ -1,0 +1,12 @@
+﻿@using ASPShopV2.Models
+@model List<Product>  
+
+    @foreach(var item in Model)
+{
+    <h1> @item.Id @item.Name</h1>
+    <p>Description: @item.Description</p>
+    <p>Price: @item.Price</p>
+    <form method="post" asp-action="RemoveItem" asp-route-id="@item.Id">
+        <input type="submit" value="Delete"/>
+    </form>
+}

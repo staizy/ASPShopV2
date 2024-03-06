@@ -8,8 +8,6 @@ namespace ASPShopV2.DatabaseContext
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductInfo> ProductsInfo { get; set; }
 
-
-
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             Database.EnsureCreated();
