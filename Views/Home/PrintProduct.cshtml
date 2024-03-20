@@ -1,12 +1,21 @@
 ﻿@using ASPShopV2.Models
 @model List<Product>  
 
-    @foreach(var item in Model)
+@await Html.PartialAsync("AddProduct")
+
+@foreach(var item in Model)
 {
     <h1> @item.Id @item.Name</h1>
     <p>Description: @item.Description</p>
     <p>Price: @item.Price</p>
-    <form method="post" asp-action="RemoveItem" asp-route-id="@item.Id">
+    <form method="post" asp-action="RemoveItem">
+        <input type="hidden" name="id" value="@item.Id"/>
+        <input type="hidden" name="name" value="@item.Name"/>
         <input type="submit" value="Delete"/>
+        <input type="submit" asp-action="EditProduct" value="Edit"/>
+        @* <input type="submit" asp-action="ViewProduct" value="open"/> *@
+
     </form>
+    @* <a href="/print/@item.Id" value="open">open</a> *@
+    <a asp-action="ViewProduct" asp-route-id="@item.Id" value="open">open</a>
 }

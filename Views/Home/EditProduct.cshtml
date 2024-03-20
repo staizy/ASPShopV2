@@ -1,0 +1,16 @@
+﻿@using ASPShopV2.Models
+@model Product
+
+<div>
+    <form method="post" asp-action="EditProduct">
+        <input type="hidden" name="Id" value="@Model.Id"/>
+        <label>Name: @Model.Name</label><br />
+        <input type="text" name="Name" /><br />
+        <label>Description: @Model.Description</label><br />
+        <input type="text" name="Description" /><br />
+        <label>Price: @Model.Price</label><br />
+        <input type="text" name="Price"/><br />
+
+        <input type="submit" asp-action="EditSelectedProduct" value="Edit Product"/>
+    </form>
+</div>
